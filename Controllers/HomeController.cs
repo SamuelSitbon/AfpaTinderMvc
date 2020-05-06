@@ -12,7 +12,7 @@ namespace AfpaTinderMvc.Controllers
         AfpaTinderContext afpaTinderContext = new AfpaTinderContext();
         public ActionResult Index()
         {
-            afpaTinderContext.Personnes.Add(new Personne { Nom = "toto", Prenom = "titi", Email = "dfd", Login = "aa", Password = "test", Status = true});
+            afpaTinderContext.Personnes.Add(new Personne { Nom = "toto", Prenom = "titi", Email = "dfd", Login = "aa", Password = "test", Statut = true});
 
             afpaTinderContext.SaveChanges();
             

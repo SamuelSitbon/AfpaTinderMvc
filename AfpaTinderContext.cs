@@ -14,6 +14,9 @@
         }
 
         public virtual DbSet<Personne> Personnes { get; set; }
+        public virtual DbSet<Loisir> Loisirs { get; set; }
+        public virtual DbSet<Ville> Villes { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

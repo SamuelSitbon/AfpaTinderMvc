@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,6 +12,11 @@ namespace AfpaTinderMvc.Models
     [Table("Personne")]
     public class Personne : DbContext
     {
+        public Personne()
+        {
+            Loisirs = new HashSet<Loisir>();
+        }
+
         [Key]
         [Column("idPersonne")]
         public int IdPersonne { get; set; }
@@ -39,8 +45,12 @@ namespace AfpaTinderMvc.Models
         public string Telephone { get; set; }
         
         [Required]
-        public bool Status { get; set; }
+        public bool Statut { get; set; }
         public double Longitude { get; set; }
         public double Latitude { get; set; }
+
+        public virtual Ville Ville { get; set; }
+
+        public virtual ICollection<Loisir> Loisirs { get; set; }
     }
 }
